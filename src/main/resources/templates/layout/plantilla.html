@@ -12,9 +12,9 @@
                 <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
                 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
                 <link href="CSS/header.css" rel="stylesheet" type="text/css"/>
-    </head>
+                </head>
                 <body>
-                    <header>
+                    <header th:fragment="header" class="header">
                         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #CCD264">
                             <div class="container-fluid">
                                 <a class="navbar-brand" href="#">
@@ -40,10 +40,10 @@
                                             <a class="nav-link me-4 fs-3"  href="matricula.html">Matricula</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link me-4 fs-3"  href="#">Sedes</a>      
+                                            <a class="nav-link me-4 fs-3"  href="sedes.html">Sedes</a>      
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link me-4 fs-3"  href="#">Tienda</a>
+                                            <a class="nav-link me-4 fs-3"  href="tienda.html">Tienda</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link me-4 fs-3"  href="#">Servicios</a>
@@ -52,7 +52,7 @@
                                             <a class="nav-link me-4 fs-3"  href="contactenos.html">Contacto</a>
                                         </li>
                                     </ul>
-                                   
+
                                     <ul class="navbar-nav flex-row flex-wrap text-light " >
                                         <li class="nav-item-r col-6 col-md-4 p-3 fs-3" >
                                             <a class="nav-link" href="#"> <i class="fa-brands fa-facebook"></i></a>
@@ -65,13 +65,13 @@
                             </div>
                         </nav>
                     </header>
-                    
+
                     <article th:fragment="article" class="article" >
                         <section>
                             <div>
                                 <img src="img/Inicio_1.jpg" width="100%" height="10%" style="margin-top: -20%"/>                                     
                             </div>
-                            
+
                             <div class="cuadrado" id="menu">                                     
                                 <img class="coordinadora" src="img/coordinadora.jpg" alt=""/>                                                                                   
                                 <img class="director"  src="img/Director.jpg" alt=""/>
@@ -87,10 +87,10 @@
                                     <p style="margin: 1% 0 0 27%">Pediatra</p>
                                 </div>                             
                             </div>
-                      
+
                         </section>
-                       
+
                     </article>
-                    
+
                 </body>
                 </html>
