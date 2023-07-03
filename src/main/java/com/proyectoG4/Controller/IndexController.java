@@ -14,4 +14,29 @@ public class IndexController {
         return "index";
     }
     
+    @RequestMapping("/Servicios")
+    public String services(){
+        return "Servicios";
+    }
+    
+    @RequestMapping("Contactenos")
+    public String contacts(){
+        return "Contactenos";
+    }
+    
+    @RequestMapping("Matricula")
+    public String matricula(){
+        return "Matricula";
+    }
+    
+    @RequestMapping("Sedes")
+    public String sedes(){
+        return "Sedes";
+    }
+    
+    @RequestMapping("Tienda")
+    public String tienda(){
+        return "Tienda";
+    }
+    
 }

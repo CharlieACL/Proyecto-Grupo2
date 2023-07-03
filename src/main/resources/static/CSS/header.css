@@ -19,8 +19,11 @@
     color: white
 }
 
+.active:empty{
+    background-color: #F2FD3A;
+}
 .cuadrado{
-    position: absolute;
+    position: static;
     top: 75%;
     width: 100%;
     height: 44%;
@@ -47,4 +50,47 @@
     height: 165px;
     margin: 2% 0 0 18%;
 }
+
+.mis{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    margin: -2% 0 0 15%;
+}
+
+.obj{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    margin: -2% 0 0 48%;
+}
+
+.val{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    margin: -2% 0 0 80%;
+}
+
+.pie1{
+    opacity: 15%;
+    width: 200px;
+    height: 200px;
+    margin: 2% 0 0 10%;
+}
+
+.pie2{
+    opacity: 15%;
+    width: 200px;
+    height: 200px;
+    margin: 2% 0 0 18%;
+}
+
+.pie3{
+    opacity: 15%;
+    width: 200px;
+    height: 200px;
+    margin: 2% 0 0 16%;
+}
+
 

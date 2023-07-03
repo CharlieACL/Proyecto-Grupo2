@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>JurásicoKids</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+                <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+                <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+                <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+                <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+                </head>
+    <body>
+        <article th:fragment="cuerposervices">
+            <div>
+                <h1 style="text-align: center;margin-top: 2%;color: black"> Nuestros Servicios</h1>
+            </div>
+            <br><br>
+                    <div style="display: flex">
+                        <div>
+                            <h4 style="margin-left: 3%">Jardin Infantil</h4>
+                            <br>
+                                <p style="margin-left: 3%; font-size: 150%">Nuestro Jardín infantil se enfoca en el desarrollo de la primera época de la niñez, además de cuidado correcto que conlleva cada niño y niña que forme parte del jardín. Los niños en general tendrán un espacio amplio y agradable donde compartirán con otros niños y realizaran actividades dinámicas para que gasten energías, se diviertan y al mismo tiempo aprendan valores, como conocimientos generales. </p>
+                        </div>
+                        <div>
+                            <img style="margin-top: 3%" src="img/servicios-1.jpg" width="570" height="330"/>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex"> 
+                        <div>
+                            <img style="margin-top: 3%" src="img/servicios-2.jpg" width="480" height="220"/>
+                        </div>
+                        <div>
+                            <h4 style="margin-left: 3%;margin-top: 2%">Espacios para padres y cuidadores</h4>
+                            <br>
+                                <p style="margin-left: 3%; margin-right:4% ;font-size: 150%">Espacios dirigidos especialmente  a padres y otros adultos que quieran conocer sobre temas específicos acerca de mejorar la comunicación efectiva y desarrollar habilidades para la interacción con niños y niñas de la primera infancia, explicadas y dadas por especialistas.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex">
+                        <div>
+                            <h4 style="margin-left: 3%;margin-top: 2%">Pediatría</h4>
+                            <br>
+                                <p style="margin-left: 3%; font-size: 150%">Se brindan atención médica individualizada, monitoreando el crecimiento y desarrollo de cada niño, mediante exámenes físicos regulares, para así  evaluar el estado de salud general. Además, se ofrece asesoramiento sobre nutrición, higiene personal y prevención de enfermedades, educando a los niños  sobre cómo mantener una vida saludable. </p>
+                        </div>
+                        <div>
+                            <img style="margin-top: 5%" src="img/servicios-3.jpg" width="500" height="280"/>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex"> 
+                        <div>
+                            <img style="margin-top: 3%" src="img/servicios-4.jpg" width="450" height="280"/>
+                        </div>
+                        <div>
+                            <h4 style="margin-left: 3%;margin-top: 2%">Políticas de Inclusión</h4>
+                            <br>
+                                <p style="margin-left: 3%; margin-right:4% ;font-size: 150%">Se tiene como ideal ser inclusivos con distintos niños sin dar importancia a la raza o etnia a la que pertenezca además de los que puedan padecer condiciones especiales dándoles una atención mas especializada a las diferentes situaciones que puede presentar el niño, ya sea por tener diferentes capacidades motoras, dificultades con la pronunciación de las palabras, discapacitado</p>
+                        </div>
+                    </div>
+        </article>
+        
+    </body>
+</html>

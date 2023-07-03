@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>JurásicoKids</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+                <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+                <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+                <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+                <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+                <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <article th:fragment="cuerpocontactenos">  
+        <body>
+             <div>
+                <h3 style="text-align: center">¡Seguínos en nuestras redes sociales!</h3>
+                <center><img src="images/redes.png" alt="" height="10%" width="20%"/></center>
+                <br>
+                <h4 style="text-align: center">¡Déjanos un mensaje y nos pondremos en contacto lo más pronto posible!</h4>
+                <label style=" margin-left: 36%" name="name" rows="5" cols="10">Nombre: </label><input type="text" id="text" placeholder="Digite el nombre" size="30" style=" border-color: #CCD264">
+                <br>
+                <br>
+                <label style=" margin-left: 30.3%" name="name" rows="5" cols="10">Correo Electrónico: </label><input type="email" id="text" placeholder="aaa123@gmail.com" size="30" style=" border-color: #CCD264">
+                <br>
+                <br>
+                <label style=" margin-left: 35.7%" name="name" rows="5" cols="10">Teléfono: </label><input type="text" id="text" placeholder="Digite el teléfono" size="30" style=" border-color: #CCD264">
+                <br>
+                <br>
+                <label style=" margin-left: 35.8%; margin-bottom: 5%" name="name" rows="5" cols="10">Mensaje: </label><input type="text" id="text" size="30" style=" border-color: #CCD264; height: 80px">
+                <br>
+                <br>
+                <input  style="margin-left: 48%; height: 50px; width: 80px; background-color: #CCD264; border-color: #CCD264;"type="button" id="button" name="button" value="Enviar" />
+                <style>
+                    body{
+                        background: url("images/fondo.png") no-repeat center
+                        center fixed;
+                        background-size: cover;   
+                    }
+                </style>
+            </div>
+        </article>
+    </body>
+</html>
