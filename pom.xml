@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.proyectoG4</groupId>
-    <artifactId>proyectoG4</artifactId>
+    <artifactId>proyectoG2</artifactId>
     <version>1</version>
-    <name>proyectoG4</name>
+    <name>proyectoG2</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>17</java.version>
@@ -71,6 +71,10 @@
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
     </dependencies>
 

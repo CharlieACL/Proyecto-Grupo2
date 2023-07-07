@@ -1,5 +1,5 @@
 
-package com.proyectoG4.Controller;
+package com.proyectoG2.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

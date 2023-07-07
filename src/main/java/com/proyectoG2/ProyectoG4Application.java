@@ -1,4 +1,4 @@
-package com.proyectoG4;
+package com.proyectoG2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
