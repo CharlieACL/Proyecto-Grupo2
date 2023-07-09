@@ -7,64 +7,94 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <article  th:fragment="cuerpomatricula">
-            <h1 style="margin-top: 2%">Matrícula</h1>
-
-            <h3>Datos Estudiante</h3>
-            <label>Nombre y Apellido</label> <br>
-            <input type="text" id="text" size="50">
-            <label style="margin-left: 33%; margin-bottom: 1%">Identificación</label>
-            <input style="margin-left: 64%" type="text" id="text" size="60">
-            <label>Fecha de Nacimiento</label><br>
-            <input type="text" id="text" placeholder="Día" size="5" > <input type="text" id="text" placeholder="Mes" size="5"> <input type="text" id="text" placeholder="Año" size="5">
+        <article  th:fragment="cuerpomatricula" class="img">
+           
+            <h1 style="text-align: center; color: #ffffff">Matrícula</h1>
+            
+            <h3 style="color: #ffffff">Datos Estudiante</h3>
+            <div style="display: flex;">
+                <label style="color: #ffffff">Nombre y Apellido</label> 
+                <label style="margin-left: 81%; color: #ffffff">Identificación</label>
+            </div>
             <br>
-            <label style="margin-left: 64%; margin-bottom: 1%">Lugar de Nacimiento</label>
-            <input style="margin-left: 64%" type="text" id="text" size="60">
-            <label>Años Cumplidos</label>
+            <div style="display: flex;">
+                <input type="text" id="text" size="50" style="background-color:#cccccc">
+                <input type="text" id="text" size="50" style="margin-left: 33%; background-color: #cccccc">
+            </div>
             <br>
-            <input type="text" id="text" size="5">
-            <h3>Dirección Domicilaria</h3>
-
-            <label>Dirección de la calle principal</label>
+            <section style="display: flex;">
+                <label style="color: #ffffff">Fecha de Nacimiento</label>
+                <label style=" display: flex;margin-left: 75%;color: #ffffff">Lugar de Nacimiento</label>
+            </section>
+            <section style="display: flex">   
+                <input type="text" id="text" placeholder="Día" size="5" style="background-color:#cccccc"> <input type="text" id="text" placeholder="Mes" size="5" style="background-color:#cccccc"> <input type="text" id="text" placeholder="Año" size="5" style="background-color:#cccccc">
+                <input style="margin-left: 47%; background-color:#cccccc" type="text" id="text" size="50">
+            </section>
             <br>
-            <input type="text" id="text" size="50" >
+            <label style="color: #ffffff">Años Cumplidos</label>
             <br>
-            <label style="margin-left: 64%; margin-bottom: 1%">Teléfono Convencional</label>
-            <input style="margin-left: 64%" type="text" id="text" size="60">
+                <input type="text" id="text" size="5" style="background-color:#cccccc">
+            <br>
+            <br>
+            <h3 style="color: #ffffff">Dirección Domiciliaria</h3>
+            <section style="display: flex;">
+                <label style="color: #ffffff">Dirección de la calle principal</label>
+                <label style="margin-left: 70%;color: #ffffff">Teléfono Convencional</label>
+            </section>
+            <section style="display: flex">
+                <input type="text" id="text" size="50" style="background-color:#cccccc">
+                <input style="margin-left: 33%; background-color:#cccccc" type="text" id="text" size="50" >
+            </section>
             <br>
             <label>Dirección de la calle transversal</label>
             <br>
-            <input type="text" id="text" size="50" >
+            <input type="text" id="text" size="50" style="background-color:#cccccc">
             <br>
             <br>
-            <label>Número de casa</label>
+            <label style="color: #ffffff">Número de casa</label>
             <br>
-            <input type="text" id="text" size="5" >
-            <br>
-
-            <h3>Datos Matrícula</h3>
-            <label>Sede</label><br>
-            <input type="text" id="text" size="30">
-            <br>
-            <h3>Datos Encargado</h3>
-            <label >Identificación</label>
-            <br>
-            <input type="text" id="text" placeholder="Identificación" size="50">
+            <input type="text" id="text" size="5" style="background-color:#cccccc">
             <br>
             <br>
-            <label>Nombre y Apellido</label>
-            <br>
-            <input type="text" id="text" placeholder="Digite el nombre y apellido" size="50">
-            <br>
-            <br>
-            <label>Teléfono</label>
-            <br>
-            <input type="text" id="text" placeholder="Digite el nombre y apellido" size="50">
+            <h3 style="color: #ffffff">Datos Matrícula</h3>
+            <label style="color: #ffffff">Sede</label><br>
+            <input type="text" id="text" size="30" style="background-color:#cccccc">
             <br>
             <br>
+            <h3 style="color: #ffffff">Datos Encargado</h3>
+            <label style="color: #ffffff">Identificación</label>
+            <br>
+                <input type="text" id="text" placeholder="Identificación" size="50" style="background-color:#cccccc">
             <br>
             <br>
-            <input  style="margin-left: 50%; height: 50px; width: 80px; background-color: #CCD264; border-color: #CCD264;"type="button" id="button" name="button" value="Matricular" /><br/>
+            <label style="color: #ffffff">Nombre y Apellido</label>
+            <br>
+                <input type="text" id="text" placeholder="Digite el nombre y apellido" size="50" style="background-color:#cccccc">
+            <br>
+            <br>
+            <label style="color: #ffffff">Teléfono</label>
+            <br>
+                <input type="text" id="text" placeholder="Digite el nombre y apellido" size="50" style="background-color:#cccccc">
+            <br>
+            <br>
+            <br>
+            <br>
+            <input  style="margin-left: 50%; height: 50px; width: 90px; background-color: #CCD264; border-color: #CCD264;"type="button" id="button" name="button" value="Matricular" /><br/>
+            <br>
+            <br>
+            
+                <style>
+                    .img{
+                        background: linear-gradient(rgba(5, 7, 12, 0.35), rgba(5, 7, 12, 0.35)), 
+                        url(https://img.freepik.com/vector-premium/tablero-interior-sala-clase-escuela-vacia-fondo-educacion-dibujos-animados-concepto-educacion-sala-formacion-universitaria-o-universitaria-pizarra-mesa-escritorios-sillas-ilustracion-vector-estilo-plano_165488-1357.jpg) no-repeat center
+                        center;
+                        background-size: cover;    
+                     
+                        
+                    }
+                   
+                  
+                </style>
         </article>
     </body>
 </html>
