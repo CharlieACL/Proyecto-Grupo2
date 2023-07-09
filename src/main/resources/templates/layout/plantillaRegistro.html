@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    </head>
+    <body>
+        <article th:fragment="cuerpoRegistro">
+            
+            <div style="margin: 0 0 0 37% ">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div th:if="${param.exito}">
+                        Se ha registrado exitosamente a la aplicación                       
+                    </div> 
+                    <h1>Registrate</h1>
+                    <form th:action="@{/registro}" method="post" th:object="${usuarios}">
+                        <div class="form-group">
+                            <label class="form-control" for="nombreUsuario">Nombre de Usuario:</label>
+                            <input id="nombreUsuario" type="text" class="form-control" th:field="*{nombreUsuario}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control" for="correoElectronico">Correo Electronico:</label>
+                            <input id="correoElectronico" type="email" class="form-control" th:field="*{correoElectronico}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control" for="contraseña">Contraseña:</label>
+                            <input id="contraseña" type="password"class="form-control" th:field="*{contraseña}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control" for="telefono">Teléfono:</label>
+                            <input id="telefono" type="text" class="form-control" th:field="*{telefono}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Registrar</button>
+                            <span>Si estas registrado<a th:href="@{/login}">inicio sesion aqui</a></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+            
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+            crossorigin="anonymous"></script>
+            
+        </article>
+    </body>
+</html>
