@@ -14,6 +14,12 @@ public class IndexController {
         return "index";
     }
     
+    @RequestMapping("/login")
+    public String login(Model model) {
+        //model.addAttribute("attribute", "value");
+        return "login";
+    }
+    
     @RequestMapping("/Servicios")
     public String services(){
         return "Servicios";
