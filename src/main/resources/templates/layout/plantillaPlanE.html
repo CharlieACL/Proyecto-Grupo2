@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>Plan de Estudios</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+                <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+                <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+                <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+                <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+                <link href="CSS/header.css" rel="stylesheet" type="text/css"/>
+                </head>
+    <body>
+        <article th:fragment="cuerpoPlanE">
+            <div>
+                <h1 style="text-align: center;margin-top: 2%;color: black">Plan de Estudios</h1>
+            </div>
+            <br><br>
+            <div style="display: flex">
+                <div style="margin: 0 0 0 20% ">
+                    <h3 style="color: red">Primer Ciclo</h3>
+                    <li style="font-size: 150%">Maternal I</li>
+                    <li style="font-size: 150%">Maternal II</li>
+                </div>
+                
+                <div style="margin: 0 0 0 3% ">
+                    <div style="font-size: 450%">
+                        <i class="fa-sharp fa-solid fa-arrow-right" style="color: red"></i>
+                    </div>
+                </div>
+                
+                <div style="margin: 0 0 0 5% ">
+                    <h3 style="color: palevioletred">Segundo Ciclo</h3>
+                    <li style="font-size: 150%">Prekínder</li>
+                </div>
+                
+                <div style="margin: 0 0 0 3% ">
+                    <div style="font-size: 450%">
+                    <i class="fa-sharp fa-solid fa-arrow-right" style="color: palevioletred"></i>
+                    </div>
+                </div>
+                
+                <div style="margin: 0 0 0 3% ">
+                    <h3 style="color: goldenrod">Tercer Ciclo</h3>
+                    <li style="font-size: 150%">Transición</li>
+                </div>
+            </div>
+            <br><br>
+            <div>
+                <h4 style="margin: 0 0 0 8%;color: red ">Maternal I y II</h4>
+                <br>
+                    <div class="cuadrado1" style="display: flex">
+                    <img style="margin: 0 0 0 8%" src="https://static.wixstatic.com/media/11062b_fe6dd197d5d44552b7b2ec25379b757c~mv2.jpg/v1/crop/x_1238,y_0,w_4245,h_4480/fill/w_600,h_528,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Niño%20jugando.jpg" width="190" height="190"/>
+                    <div style="margin: 5% 1% 0 2%">
+                        <h5>Edad: 1 a 2 años (Maternal I) y 2 a 3 años (Maternal II)</h5>
+                        <h5>Enfoque: Atención y cuidado para niños pequeños, estimulación temprana y desarrollo de habilidades sociales y motoras</h5>
+                    </div>        
+                </div>
+            </div>
+            <br>
+            <div>
+                <h4 style="margin: 0 0 0 8%; color: palevioletred ">Prekínder</h4>
+                <br>
+                <div  class="cuadrado2" style="display: flex">
+                    <img style="margin: 0 0 0 8%" src="https://static.wixstatic.com/media/5e0e80_414a09a376db449189bc29ee3914d9e6~mv2.jpg/v1/fill/w_640,h_700,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/5e0e80_414a09a376db449189bc29ee3914d9e6~mv2.jpg" width="190" height="190"/>
+                    <div style="margin: 5% 1% 0 2%">
+                        <h5>Edad: 3 a 4 años</h5>
+                        <h5>Enfoque: Preparación para la educación formal, desarrollo de habilidades básicas de lenguaje, matemáticas y exploración del entorno</h5>
+                    </div>        
+                </div>
+            </div>
+            <br>
+            <div>
+                <h4 style="margin: 0 0 0 8% ;color: goldenrod">Transición</h4>
+                <br>
+                <div  class="cuadrado3" style="display: flex">
+                    <img style="margin: 0 0 0 8%" src="https://i0.wp.com/tuamawta.com/wp-content/uploads/2019/10/Fases-del-desarrollo-de-la-lectura-en-un-niño.jpg?fit=640%2C426&ssl=1" width="190" height="190"/>
+                    <div style="margin: 5% 1% 0 2%">
+                        <h5>Edad: 4 a 5 años (algunos lugares también aceptan niños de 3 a 4 años)</h5>
+                        <h5>Enfoque: Preparación para el ingreso a la educación primaria, adquisición de habilidades de lectoescritura, matemáticas básicas y socialización</h5>
+                    </div>        
+                </div>
+            </div>
+            <br>
+        </article>
+    </body>
+</html>

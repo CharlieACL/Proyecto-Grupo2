@@ -10,13 +10,11 @@ public class IndexController {
     
     @RequestMapping("/")
     public String page(Model model) {
-        //model.addAttribute("attribute", "value");
         return "index";
     }
     
     @RequestMapping("/login")
     public String login(Model model) {
-        //model.addAttribute("attribute", "value");
         return "login";
     }
     
@@ -43,6 +41,11 @@ public class IndexController {
     @RequestMapping("Tienda")
     public String tienda(){
         return "Tienda";
+    }
+    
+    @RequestMapping("PlanE")
+    public String PlanE(){
+        return "PlanE";
     }
     
 }

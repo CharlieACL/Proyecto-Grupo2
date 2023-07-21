@@ -93,4 +93,28 @@
     margin: 2% 0 0 16%;
 }
 
+.cuadrado1{
+    position: static;
+    margin: 0 0 0 7%;
+    top: 75%;
+    width: 90%;
+    height: 44%;
+    background-color: #ff6666;
+}
+.cuadrado2{
+    position: static;
+    margin: 0 0 0 7%;
+    top: 75%;
+    width: 90%;
+    height: 44%;
+    background-color: #ff99ff;
+}
+.cuadrado3{
+    position: static;
+    margin: 0 0 0 7%;
+    top: 75%;
+    width: 90%;
+    height: 44%;
+    background-color: #ffcc66;
+}
 

@@ -1,11 +1,10 @@
 
 package com.proyectoG2.service.impl;
 
-import com.proyectoG2.dao.UsuariosDao;
 import com.proyectoG2.domain.Rol;
-import com.proyectoG2.domain.Usuarios;
+import com.proyectoG2.domain.Usuario;
 import com.proyectoG2.dto.UsuarioRegistroDTO;
-import com.proyectoG2.service.UsuariosService;
+import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -20,38 +19,55 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import com.proyectoG2.dao.UsuarioDao;
+import com.proyectoG2.service.UsuarioService;
 
 @Service("userDetailsService")
-public class UsuariosServiceImpl implements UsuariosService, UserDetailsService{
+public class UsuarioServiceImpl implements UsuarioService, UserDetailsService{
 
     
     @Autowired
-    private UsuariosDao usuariosDao;
+    private UsuarioDao usuarioDao;
     
-    @Override
+    @Autowired
+    private HttpSession session;
+    
+    /*@Override
     public Usuarios save(UsuarioRegistroDTO registroDTO) {
         Usuarios usuarios = new Usuarios(registroDTO.getNombreUsuario(), 
         registroDTO.getCorreoElectronico(), 
         registroDTO.getContraseña(), 
         registroDTO.getTelefono(), Arrays.asList(new Rol("ROLE_USER")));
         return usuariosDao.save(usuarios);
+    }*/
+    
+    @Override
+    @Transactional
+    public void save(Usuario usuario) {
+        usuarioDao.save(usuario);
     }
 
     @Override
     @Transactional(readOnly=true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Usuarios usuarios=usuariosDao.findByNombreUsuario(username);
+        Usuario usuarios=usuarioDao.findByUsername(username);
         
         if(usuarios==null){
             throw new UsernameNotFoundException(username);
         }
         
-        return new User(usuarios.getNombreUsuario(),usuarios.getContraseña(),mapearRoles(usuarios.getRoles()));      
+        var roles=new ArrayList<GrantedAuthority>();
+        
+        for (Rol rol: usuarios.getRoles()){
+           roles.add(new SimpleGrantedAuthority(rol.getNombre()));
+        }
+        
+        return new User(usuarios.getUsername(), usuarios.getPassword(),roles);
     }
     
     
-    private Collection<? extends GrantedAuthority> mapearRoles(Collection<Rol> roles){
+    /*private Collection<? extends GrantedAuthority> mapearRoles(Collection<Rol> roles){
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getNombre())).collect(Collectors.toList());
-    }
-
- }
+    }*/
+    
+}
