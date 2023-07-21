@@ -48,4 +48,9 @@ public class IndexController {
         return "PlanE";
     }
     
+    @RequestMapping("EnfoqueH")
+    public String EnfoqueH(){
+        return "EnfoqueH";
+    }
+    
 }

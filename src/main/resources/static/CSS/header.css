@@ -118,3 +118,24 @@
     background-color: #ffcc66;
 }
 
+.arte{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    margin: -2% 0 0 15%;
+}
+
+.plog{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    margin: -2% 0 0 48%;
+}
+
+.comu{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    margin: -2% 0 0 80%;
+}
+
