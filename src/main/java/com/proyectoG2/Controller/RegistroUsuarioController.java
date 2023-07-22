@@ -9,19 +9,25 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.proyectoG2.service.UsuarioService;
+import org.springframework.ui.Model;
 
 @Controller
 @RequestMapping("/registro")
 public class RegistroUsuarioController {
     
     @Autowired
-    private UsuarioService usuariosService;
+    private UsuarioService usuarioService;
     
-    /*@ModelAttribute("usuarios")
+    @ModelAttribute("usuarios")
     public UsuarioRegistroDTO retornarNuevoUsuarioRegistroDTO(){
         
         return new UsuarioRegistroDTO();
-    }*/
+    }
+    
+    @ModelAttribute("usuario") 
+    public Usuario NuevoUsuario(){
+        return new Usuario();
+    }
     
     @GetMapping
     public String mostrarFormularioDeRegistro(){
@@ -29,10 +35,12 @@ public class RegistroUsuarioController {
     }
     
     @PostMapping
-    public String save(Usuario usuarios){
-        usuariosService.save(usuarios);
+    public String save(@ModelAttribute("usuario") Usuario usuario){
+        usuarioService.save(usuario);
         return "redirect:/registro?exito";
     }
+    
+    
     
     /*@PostMapping
     public String registrarCuentaDeUsuario(@ModelAttribute("usuarios") UsuarioRegistroDTO registroDTO){

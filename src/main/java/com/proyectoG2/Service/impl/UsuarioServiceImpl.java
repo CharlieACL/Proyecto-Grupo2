@@ -69,5 +69,10 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService{
     /*private Collection<? extends GrantedAuthority> mapearRoles(Collection<Rol> roles){
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getNombre())).collect(Collectors.toList());
     }*/
-    
+
+    @Override
+    @Transactional(readOnly = true)
+    public Usuario getUsuario(Usuario usuario) {
+        return usuarioDao.findById(usuario.getIdUsuario()).orElse(null);
+    }  
 }
