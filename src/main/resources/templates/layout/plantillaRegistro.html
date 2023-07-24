@@ -4,56 +4,67 @@
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     </head>
     <body>
         <article th:fragment="cuerpoRegistro">
 
-            <div style="margin: 0 0 0 37% ">
+            <div class="container my-5">
+            <div style="margin: 0 0 0 17%; "> 
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="cuadro input" style="width: 150%;opacity: .8;">
+                        <br><br><br><br>
+                        <br><br><br><br>
+                        <br><br><br><br>
+                        <br><br><br><br>                       
+                        <br><br><br><br>                       
+                        <br><br><br><br>                       
+                                              
+                    </div>
+            <div style="margin: 0 0 0 15% ">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div th:if="${param.exito}">
                         Se ha registrado exitosamente a la aplicación                       
                     </div> 
-                    <h1>Registrate</h1>
+                    <h1 style="position: absolute;margin-top: -45%;margin-left: 15%;color: #999900">Crear Usuario</h1>
                     <form th:action="@{/registro}" method="post" th:object="${usuario}">
-                        <div class="form-group">
-                            <label class="form-control" for="username">Nombre de Usuario:</label>
-                            <input id="username" type="text" class="form-control" th:field="*{username}", 
+                        <div style="position: absolute;margin-top: -40%">
+                            <label style="margin-left: 3%;font-size: 120% " for="username">Nombre de Usuario:</label>
+                            <input  id="username" type="text" class="input" style="width: 100%; height: 100%" th:field="*{username}", 
                                    required autofocus="autofocus">
                         </div>
-                        <div class="form-group">
-                            <label class="form-control" for="correo">Correo Electronico:</label>
-                            <input id="correo" type="email" class="form-control" th:field="*{correo}", 
+                        <div style="position: absolute;margin-top: -31%">
+                            <label style="margin-left: 3%;font-size: 120% " for="correo">Correo Electronico:</label>
+                            <input id="correo" type="email" class="input" style="width: 100%; height: 100%" th:field="*{correo}", 
                                    required autofocus="autofocus">
                         </div>
-                        <div class="form-group">
-                            <label class="form-control" for="password">Contraseña:</label>
-                            <input id="password" type="password"class="form-control" th:field="*{password}", 
+                        <div style="position: absolute;margin-top: -23%">
+                            <label style="margin-left: 3%;font-size: 120% " for="password">Contraseña:</label>
+                            <input id="password" type="password"class="input" style="width: 100%; height: 100%" th:field="*{password}", 
                                    required autofocus="autofocus">
                         </div>
-                        <div class="form-group">
-                            <label class="form-control" for="telefono">Teléfono:</label>
-                            <input id="telefono" type="text" class="form-control" th:field="*{telefono}", 
+                        <div style="position: absolute;margin-top: -15%">
+                            <label style="margin-left: 3%;font-size: 120% " for="telefono">Teléfono:</label>
+                            <input id="telefono" type="text" class="input" style="width: 100%; height: 100%" th:field="*{telefono}", 
                                    required autofocus="autofocus">
                         </div>
-                        <div class="mb-3">
-                            <label for="activo">Acepta Terminos y Condiciones</label>
-                            <input class="form-check-input" 
+                        <div style="position: absolute;margin-top: -9%;display: flex">
+                            <label style="font-size: 120% " for="activo">Acepta Terminos y Condiciones</label>
+                            <input style="margin: 3% 0 0 0 " class="form-check-input" 
                                    type="checkbox" 
                                    name="activo" 
                                    id="activo"
                                    th:field="*{activo}">
                         </div>
-
-                        <br><br><br>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success">Registrar</button>
-                            <span>Si estas registrado<a th:href="@{/login}">inicio sesion aqui</a></span>
+                        
+                        <div style="position: absolute;margin-top: -6%">
+                            <button type="submit" class="btn" style="background-color: #CCD264">Crear Usuario</button>
+                            <span>Si estas registrado<a th:href="@{/login}"> login</a></span>
                         </div>
+                        
                     </form>
                 </div>
             </div>

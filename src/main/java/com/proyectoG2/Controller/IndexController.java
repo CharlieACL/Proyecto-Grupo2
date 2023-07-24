@@ -28,10 +28,7 @@ public class IndexController {
         return "Contactenos";
     }
     
-    @RequestMapping("Matricula")
-    public String matricula(){
-        return "Matricula";
-    }
+    
     
     @RequestMapping("Sedes")
     public String sedes(){
