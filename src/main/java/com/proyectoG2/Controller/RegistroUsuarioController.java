@@ -18,11 +18,11 @@ public class RegistroUsuarioController {
     @Autowired
     private UsuarioService usuarioService;
     
-    @ModelAttribute("usuarios")
+    /*@ModelAttribute("usuarios")
     public UsuarioRegistroDTO retornarNuevoUsuarioRegistroDTO(){
         
         return new UsuarioRegistroDTO();
-    }
+    }*/
     
     @ModelAttribute("usuario") 
     public Usuario NuevoUsuario(){

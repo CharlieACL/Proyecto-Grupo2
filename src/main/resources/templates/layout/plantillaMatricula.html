@@ -2,99 +2,114 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
     <head th:fragment="head">
-        <title>Contactenos</title>
+        <title>Matrícula</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link href="CSS/header.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
+    <body class="body2">
         <article  th:fragment="cuerpomatricula" class="img">
            
-            <h1 style="text-align: center; color: #ffffff">Matrícula</h1>
-            
-            <h3 style="color: #ffffff">Datos Estudiante</h3>
-            <div style="display: flex;">
-                <label style="color: #ffffff">Nombre y Apellido</label> 
-                <label style="margin-left: 81%; color: #ffffff">Identificación</label>
-            </div>
+            <h1 style="text-align: center; color: black;margin-top: 2%">Matrícula</h1>
             <br>
-            <div style="display: flex;">
-                <input type="text" id="text" size="50" style="background-color:#cccccc">
-                <input type="text" id="text" size="50" style="margin-left: 33%; background-color: #cccccc">
-            </div>
-            <br>
-            <section style="display: flex;">
-                <label style="color: #ffffff">Fecha de Nacimiento</label>
-                <label style=" display: flex;margin-left: 75%;color: #ffffff">Lugar de Nacimiento</label>
-            </section>
-            <section style="display: flex">   
-                <input type="text" id="text" placeholder="Día" size="5" style="background-color:#cccccc"> <input type="text" id="text" placeholder="Mes" size="5" style="background-color:#cccccc"> <input type="text" id="text" placeholder="Año" size="5" style="background-color:#cccccc">
-                <input style="margin-left: 47%; background-color:#cccccc" type="text" id="text" size="50">
-            </section>
-            <br>
-            <label style="color: #ffffff">Años Cumplidos</label>
-            <br>
-                <input type="text" id="text" size="5" style="background-color:#cccccc">
-            <br>
-            <br>
-            <h3 style="color: #ffffff">Dirección Domiciliaria</h3>
-            <section style="display: flex;">
-                <label style="color: #ffffff">Dirección de la calle principal</label>
-                <label style="margin-left: 70%;color: #ffffff">Teléfono Convencional</label>
-            </section>
-            <section style="display: flex">
-                <input type="text" id="text" size="50" style="background-color:#cccccc">
-                <input style="margin-left: 33%; background-color:#cccccc" type="text" id="text" size="50" >
-            </section>
-            <br>
-            <label>Dirección de la calle transversal</label>
-            <br>
-            <input type="text" id="text" size="50" style="background-color:#cccccc">
-            <br>
-            <br>
-            <label style="color: #ffffff">Número de casa</label>
-            <br>
-            <input type="text" id="text" size="5" style="background-color:#cccccc">
-            <br>
-            <br>
-            <h3 style="color: #ffffff">Datos Matrícula</h3>
-            <label style="color: #ffffff">Sede</label><br>
-            <input type="text" id="text" size="30" style="background-color:#cccccc">
-            <br>
-            <br>
-            <h3 style="color: #ffffff">Datos Encargado</h3>
-            <label style="color: #ffffff">Identificación</label>
-            <br>
-                <input type="text" id="text" placeholder="Identificación" size="50" style="background-color:#cccccc">
-            <br>
-            <br>
-            <label style="color: #ffffff">Nombre y Apellido</label>
-            <br>
-                <input type="text" id="text" placeholder="Digite el nombre y apellido" size="50" style="background-color:#cccccc">
-            <br>
-            <br>
-            <label style="color: #ffffff">Teléfono</label>
-            <br>
-                <input type="text" id="text" placeholder="Digite el nombre y apellido" size="50" style="background-color:#cccccc">
-            <br>
-            <br>
-            <br>
-            <br>
-            <input  style="margin-left: 50%; height: 50px; width: 90px; background-color: #CCD264; border-color: #CCD264;"type="button" id="button" name="button" value="Matricular" /><br/>
-            <br>
-            <br>
-            
-                <style>
-                    .img{
-                        background: linear-gradient(rgba(5, 7, 12, 0.35), rgba(5, 7, 12, 0.35)), 
-                        url(https://img.freepik.com/vector-premium/tablero-interior-sala-clase-escuela-vacia-fondo-educacion-dibujos-animados-concepto-educacion-sala-formacion-universitaria-o-universitaria-pizarra-mesa-escritorios-sillas-ilustracion-vector-estilo-plano_165488-1357.jpg) no-repeat center
-                        center;
-                        background-size: cover;    
-                     
-                        
-                    }
-                   
-                  
-                </style>
+            <form th:action="@{/Matricula}" method="POST" th:object="${matricula}">
+                    <div style="margin: 0 5% 0 5%" >
+                       <label class="form-control" for="identificacionEstudiante">Identificacion de estudiante:</label>
+                                <input id="identificacionEstudiante" type="number" class="form-control" th:field="*{identificacionEstudiante}", 
+                                       required autofocus="autofocus">
+                    </div>
+                    <br>
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="nombreCompletoEstudiante">Nombre Completo del Estudiante:</label>
+                            <input id="nombreCompletoEstudiante" type="text" class="form-control" th:field="*{nombreCompletoEstudiante}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <br>
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="dia">Dia:</label>
+                            <input id="dia" type="number"class="form-control" th:field="*{dia}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <br>
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="mes">Mes:</label>
+                            <input id="mes" type="number" class="form-control" th:field="*{mes}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <br>   
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="aho">Año:</label>
+                            <input id="aho" type="number" class="form-control" th:field="*{aho}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <br>
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="lugarNacimiento">Lugar de Nacimiento:</label>
+                            <input id="lugarNacimiento" type="text" class="form-control" th:field="*{lugarNacimiento}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <br>
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="ahosCumplidos">Años Cumplidos:</label>
+                            <input id="ahosCumplidos" type="number" class="form-control" th:field="*{ahosCumplidos}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <br>
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="direccionCallePrincipal">Direccion Callde Principal:</label>
+                            <input id="direccionCallePrincipal" type="text" class="form-control" th:field="*{direccionCallePrincipal}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <br>
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="telefonoConvencional">Teléfono Convencional:</label>
+                            <input id="telefonoConvencional" type="text" class="form-control" th:field="*{telefonoConvencional}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <br>
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="direccionCalleTransversal">Direccion de Calle Transversal:</label>
+                            <input id="direccionCalleTransversal" type="text" class="form-control" th:field="*{direccionCalleTransversal}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <br>
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="numeroCasa">Numero de Casa:</label>
+                            <input id="numeroCasa" type="text" class="form-control" th:field="*{numeroCasa}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <br>
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="sede">Sede:</label>
+                            <input id="sede" type="text" class="form-control" th:field="*{sede}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <br>
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="identificacionEncargado">Identificacion del Encargado:</label>
+                            <input id="identificacionEncargado" type="text" class="form-control" th:field="*{identificacionEncargado}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <br>
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="nombreCompletoEncargado">Nombre Completo del Encargado:</label>
+                            <input id="nombreCompletoEncargado" type="text" class="form-control" th:field="*{nombreCompletoEncargado}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <br>
+                        <div style="margin: 0 5% 0 5%">
+                            <label class="form-control" for="telefono">Telefono:</label>
+                            <input id="telefono" type="number" class="form-control" th:field="*{telefono}", 
+                                   required autofocus="autofocus">
+                        </div>
+ 
+                        <br><br><br>
+                        <div style="margin: 0 0 0 48%">
+                            <button type="submit" class="btn btn-success">Matricular</button>
+                        </div>
+                        <br>            
+            </form>
         </article>
     </body>
 </html>
