@@ -28,7 +28,10 @@ public class IndexController {
         return "Contactenos";
     }
     
-    
+    @RequestMapping("Actividades")
+    public String actividades(){
+        return "Actividades";
+    }    
     
     @RequestMapping("Sedes")
     public String sedes(){
