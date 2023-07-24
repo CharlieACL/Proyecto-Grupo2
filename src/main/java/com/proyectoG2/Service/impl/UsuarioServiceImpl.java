@@ -1,5 +1,5 @@
 
-package com.proyectoG2.service.impl;
+package com.proyectoG2.Service.impl;
 
 import com.proyectoG2.domain.Rol;
 import com.proyectoG2.domain.Usuario;

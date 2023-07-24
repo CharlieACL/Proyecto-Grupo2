@@ -38,11 +38,6 @@ public class IndexController {
         return "Sedes";
     }
     
-    @RequestMapping("Tienda")
-    public String tienda(){
-        return "Tienda";
-    }
-    
     @RequestMapping("PlanE")
     public String PlanE(){
         return "PlanE";
