@@ -3,12 +3,8 @@ package com.proyectoG2.Service.impl;
 
 import com.proyectoG2.domain.Rol;
 import com.proyectoG2.domain.Usuario;
-import com.proyectoG2.dto.UsuarioRegistroDTO;
 import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
