@@ -9,7 +9,7 @@ public interface UsuarioService {
     
     public Usuario getUsuario(Usuario usuario);
    
-    public void save(Usuario usuario);
+    public void save(Usuario usuario, boolean rolUser);
     
    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
 }

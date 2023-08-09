@@ -1,6 +1,7 @@
 
 package com.proyectoG2.Service.impl;
 
+import com.proyectoG2.dao.RolDao;
 import com.proyectoG2.domain.Rol;
 import com.proyectoG2.domain.Usuario;
 import jakarta.servlet.http.HttpSession;
@@ -26,6 +27,9 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService{
     private UsuarioDao usuarioDao;
     
     @Autowired
+    private RolDao rolDao;
+    
+    @Autowired
     private HttpSession session;
     
     /*@Override
@@ -39,8 +43,16 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService{
     
     @Override
     @Transactional
-    public void save(Usuario usuario) {
+    public void save(Usuario usuario,boolean rolUser ) {
+        var codigo = new BCryptPasswordEncoder();
+        usuario.setPassword(codigo.encode(usuario.getPassword()));
         usuarioDao.save(usuario);
+        if(rolUser){
+            Rol rol = new Rol();
+            rol.setNombre("ROLE_USER");
+            rol.setIdUsuario(usuario.getIdUsuario());
+            rolDao.save(rol);
+        }
     }
 
     @Override

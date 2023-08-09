@@ -29,7 +29,7 @@ public class RegistroUsuarioController {
     
     @PostMapping
     public String save(@ModelAttribute("usuario") Usuario usuario){
-        usuarioService.save(usuario);
+        usuarioService.save(usuario,true);
         return "redirect:/registro?exito";
     }
     

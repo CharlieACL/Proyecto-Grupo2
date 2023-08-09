@@ -26,46 +26,50 @@
             <div style="margin: 0 0 0 15% ">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
-                    <div th:if="${param.exito}">
-                        Se ha registrado exitosamente a la aplicación                       
+                    <div style="position: absolute; margin: 1% 0 0 10%;background-color:purple;
+                         border-radius: 10px;padding: 10px;font-size: 20px;color: white"
+                         th:if="${param.exito}">El Usuario se ha creado exitosamente! 
                     </div> 
                     <h1 style="position: absolute;margin-top: -45%;margin-left: 15%;color: #999900">Crear Usuario</h1>
                     <form th:action="@{/registro}" method="post" th:object="${usuario}">
-                        <div style="position: absolute;margin-top: -40%">
+                        <div style="position: absolute;margin-top: -41%">
                             <label style="margin-left: 3%;font-size: 120% " for="username">Nombre de Usuario:</label>
-                            <input  id="username" type="text" class="input" style="width: 100%; height: 100%" th:field="*{username}", 
-                                   required autofocus="autofocus">
+                            <input  id="username" type="text" class="input" style="width: 100%; height: 100%" th:field="*{username}"
+                                    required="true" placeholder="escriba su nombre de usuario">
                         </div>
-                        <div style="position: absolute;margin-top: -31%">
+                        <div style="position: absolute;margin-top: -34%">
                             <label style="margin-left: 3%;font-size: 120% " for="correo">Correo Electronico:</label>
-                            <input id="correo" type="email" class="input" style="width: 100%; height: 100%" th:field="*{correo}", 
-                                   required autofocus="autofocus">
+                            <input id="correo" type="email" class="input" style="width: 100%; height: 100%" th:field="*{correo}" 
+                                   required="true" placeholder="escriba su correo electronico">
                         </div>
-                        <div style="position: absolute;margin-top: -23%">
+                        <div style="position: absolute;margin-top: -26%">
                             <label style="margin-left: 3%;font-size: 120% " for="password">Contraseña:</label>
-                            <input id="password" type="password"class="input" style="width: 100%; height: 100%" th:field="*{password}", 
-                                   required autofocus="autofocus">
+                            <input id="password" type="password"class="input" style="width: 100%; height: 100%" th:field="*{password}"
+                                   required="true" placeholder="escriba su contraseña">
                         </div>
-                        <div style="position: absolute;margin-top: -15%">
+                        <div style="position: absolute;margin-top: -18%">
                             <label style="margin-left: 3%;font-size: 120% " for="telefono">Teléfono:</label>
-                            <input id="telefono" type="text" class="input" style="width: 100%; height: 100%" th:field="*{telefono}", 
-                                   required autofocus="autofocus">
+                            <input id="telefono" type="text" class="input" style="width: 100%; height: 100%" th:field="*{telefono}" 
+                                   required="true" placeholder="escriba su numero de telefono">
                         </div>
-                        <div style="position: absolute;margin-top: -9%;display: flex">
+                        <div style="position: absolute;margin-top: -11%;display: flex">
                             <label style="font-size: 120% " for="activo">Acepta Terminos y Condiciones</label>
                             <input style="margin: 3% 0 0 0 " class="form-check-input" 
                                    type="checkbox" 
                                    name="activo" 
                                    id="activo"
-                                   th:field="*{activo}">
+                                   th:field="*{activo}" required="true">
                         </div>
                         
-                        <div style="position: absolute;margin-top: -6%">
-                            <button type="submit" class="btn" style="background-color: #CCD264">Crear Usuario</button>
-                            <span>Si estas registrado<a th:href="@{/login}"> login</a></span>
+                        <div style="position: absolute;margin-top: -7%;margin-left: 17%">
+                            <button type="submit" class="btn" style="background-color: #CCD264;width: 200px;height: 50px;font-size: 20px;">Crear Usuario</button>         
+                        </div>
+                        <div style="position: absolute;margin-top: -2%">
+                            <span>Si estas registrado <a th:href="@{/login}">login</a></span>
                         </div>
                         
                     </form>
+                    <br><br>                 
                 </div>
             </div>
         </div>
