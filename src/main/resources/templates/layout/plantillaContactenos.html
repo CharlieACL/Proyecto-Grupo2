@@ -10,36 +10,54 @@
                 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
                 <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
                 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-                <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+                <link href="CSS/header.css" rel="stylesheet" type="text/css"/>
     </head>
     <article th:fragment="cuerpocontactenos">  
-        <body>
-             <div>
-                <h3 style="text-align: center">¡Seguínos en nuestras redes sociales!</h3>
-                <center><img src="images/redes.png" alt="" height="10%" width="20%"/></center>
+        <body class="bodyContac">
+            <div class="squareWhite">
                 <br>
-                <h4 style="text-align: center">¡Déjanos un mensaje y nos pondremos en contacto lo más pronto posible!</h4>
-                <label style=" margin-left: 36%" name="name" rows="5" cols="10">Nombre: </label><input type="text" id="text" placeholder="Digite el nombre" size="30" style=" border-color: #CCD264">
+                <h1 style="text-align: center;margin-top: 1%;color: black">Seguinos en nuestra redes sociales</h1>
+                <div style="display: flex;margin: 0 0 0 33%" >
+                    <a class="col-sm-2"style="color: #CCD264;"href="https://www.facebook.com/profile.php?id=100095119513627" target="_blank"> <i style="font-size: 80px"class="fa-brands fa-facebook"></i></a>
+                    <a class="col-sm-2"style="color: #CCD264;"href="https://www.instagram.com/jurasicokids/" target="_blank"><i style="font-size: 80px"class="fa-brands fa-instagram"></i></a>
+                    <a class="col-sm-2"style="color: #CCD264;"href="https://github.com/CharlieACL/Proyecto-Grupo2" target="_blank"><i style="font-size: 80px"class="fa-brands fa-github"></i></a>
+                </div>
                 <br>
-                <br>
-                <label style=" margin-left: 30.3%" name="name" rows="5" cols="10">Correo Electrónico: </label><input type="email" id="text" placeholder="aaa123@gmail.com" size="30" style=" border-color: #CCD264">
-                <br>
-                <br>
-                <label style=" margin-left: 35.7%" name="name" rows="5" cols="10">Teléfono: </label><input type="text" id="text" placeholder="Digite el teléfono" size="30" style=" border-color: #CCD264">
-                <br>
-                <br>
-                <label style=" margin-left: 35.8%; margin-bottom: 5%" name="name" rows="5" cols="10">Mensaje: </label><input type="text" id="text" size="30" style=" border-color: #CCD264; height: 80px">
-                <br>
-                <br>
-                <input  style="margin-left: 48%; height: 50px; width: 80px; background-color: #CCD264; border-color: #CCD264;"type="button" id="button" name="button" value="Enviar" />
-                <style>
-                    body{
-                        background: url("img/fondo.png") no-repeat center
-                        center fixed;
-                        background-size: cover;   
-                    }
-                </style>
-            </div>
-        </article>
-    </body>
+                <div>
+                    <h4 style="text-align: center">¡Dejanos un mensaje y nos pondremos en contacto lo mas pronto posible!</h4>
+                    <br>
+                </div>
+                <form th:action="@{/Contactenos}" method="POST" th:object="${contacto}">
+                    <div style="margin: 0 0 2% 30%;" >
+                       <label for="nombre">Nombre: </label>
+                        <input id="nombre" type="text" class="input" th:field="*{nombre}", 
+                               required autofocus="autofocus">
+                    </div>
+                    <div style="margin: 0 0 2% 22%" >
+                       <label  for="correo">Correo electrónico: </label>
+                        <input id="correo" type="text" class="input" th:field="*{correo}", 
+                               required autofocus="autofocus">
+                    </div>
+                    <div style="margin: 0 0 2% 30%" >
+                       <label for="telefono">Teléfono: </label>
+                       <input id="telefono" type="text" class="input" style="width: 215px" th:field="*{telefono}", 
+                               required autofocus="autofocus">
+                    </div>
+                    <div style="margin: 0 0 2% 30%" >
+                       <label for="mensaje">Mensaje: </label>
+                       <br>
+                       <textarea id="mensaje" type="text" class="input" style="width: 215px;margin: -4% 0 0 11%" th:field="*{mensaje}", 
+                                 required autofocus="autofocus"></textarea>
+                    </div>
+                    <div style="margin-left: 42%">
+                            <button type="submit" class="btn" style="background-color: #CCD264;width: 100px;height: 40px;font-size: 15px;">Enviar</button>         
+                    </div>
+                    <div style="margin: 2% 0 0 31%; background: purple;color: white; font-size: 15px;width: 310px;border-radius: 10px;padding: 10px;" 
+                         th:if="${param.enviado}">¡Muchas Gracias! pronto te responderemos</div> 
+                    <br><br>              
+                </form>
+            </div>        
+        </body>
+    </article>
+    
 </html>

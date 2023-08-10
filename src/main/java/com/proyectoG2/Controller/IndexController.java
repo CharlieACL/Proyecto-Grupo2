@@ -23,11 +23,6 @@ public class IndexController {
         return "Servicios";
     }
     
-    @RequestMapping("Contactenos")
-    public String contacts(){
-        return "Contactenos";
-    }
-    
     @RequestMapping("Actividades")
     public String actividades(){
         return "Actividades";
