@@ -36,25 +36,22 @@ public class ProjectConfig implements WebMvcConfigurer{
         http
                 .authorizeHttpRequests((request) -> request
                 .requestMatchers("/", "/index", "/errores/**",
-                        "/Servicios/**", "/Sedes/**", "/PlanE/**","/EnfoqueH/**","/Tienda/**","/Matricula/**",
-                        "/Actividades/**","/Contactenos/**",
+                        "/Servicios/**", "/Sedes/**", "/PlanE/**","/EnfoqueH/**","/Tienda/**",
+                        "/Matricula/**","/Matricula/guardar/**",  "/Actividades/**","/Contactenos/**",
                         "/registro/**", "/js/**", "/webjars/**","/CSS/**","/img/**")
                 .permitAll()
                 .requestMatchers(
-                        "/producto/nuevo", "/producto/guardar",
+                        "/libreta/**","/producto/nuevo", "/producto/guardar",
                         "/producto/modificar/**", "/producto/eliminar/**",
-                        "/categoria/nuevo", "/categoria/guardar",
-                        "/categoria/modificar/**", "/categoria/eliminar/**",
+                        "/libreta/nuevo", "/libreta/guardar/**",
+                        "/libreta/estudiante/**", "/libreta/eliminar/**",
                         "/usuario/nuevo", "/usuario/guardar",
                         "/usuario/modificar/**", "/usuario/eliminar/**",
                         "/reportes/**"
-                ).hasRole("ADMIN")
-                .requestMatchers(
-                        "/Tienda/listado",
-                        "/usuario/listado"
-                ).hasRole("PROFESOR")
-                .requestMatchers("/facturar/carrito")
-                .hasRole("USER")
+                ).hasAnyRole("USER","ADMIN","PROFESOR")
+//                .requestMatchers("/libreta/**","/libreta/listado/**","/libreta/nuevo", "/libreta/guardar/**",
+//                        "/libreta/estudiante/**", "/libreta/eliminar/**")
+//                .hasRole("USER")
                 )
                 .formLogin((form) -> form
                 .loginPage("/login").permitAll())

@@ -12,14 +12,16 @@
                 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
                 <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
                 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-                <link href="CSS/header.css" rel="stylesheet" type="text/css"/>
-                </head>
+                <link href="/CSS/header.css" rel="stylesheet" type="text/css"/>
+                <script th:src="@{/js/rutinas.js}"></script>
+                
+    </head>
                 <body>
                     <header th:fragment="header" class="header">
                         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #CCD264">
                             <div class="container-fluid">
                                 <a class="navbar-brand" href="/">
-                                    <img src="img/JurasicoKids logo.png" width="200" height="130" />
+                                    <img src="/img/JurasicoKids logo.png" width="200" height="130" />
                                 </a>
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
                                         data-bs-target="#menu" aria-controls="navbarSupportedContent" 
@@ -34,8 +36,8 @@
                                                 <li><a class="dropdown-item" href="/Actividades">Actividades</a></li>
                                                 <li><a class="dropdown-item" href="/PlanE">Plan Estudiantil</a></li>
                                                 <li><a class="dropdown-item" href="#">Profesores</a></li>
-                                                <li><a class="dropdown-item" href="#">Libreta Estudiantil</a></li>
-                                                <li><a class="dropdown-item" href="EnfoqueH">Enfoque Holistico</a></li>
+                                                <li><a class="dropdown-item" href="/libreta/listado">Libreta Estudiantil</a></li>
+                                                <li><a class="dropdown-item" href="/EnfoqueH">Enfoque Holistico</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">

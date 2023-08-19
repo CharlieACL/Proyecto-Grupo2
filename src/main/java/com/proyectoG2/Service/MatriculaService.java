@@ -1,10 +1,10 @@
 
 package com.proyectoG2.Service;
 
-import com.proyectoG2.domain.Matricula;
+import com.proyectoG2.domain.Estudiante;
 
 
 public interface MatriculaService {
     
-     public void save(Matricula matricula);
+     public void save(Estudiante estudiante);
 }

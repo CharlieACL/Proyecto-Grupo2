@@ -2,114 +2,110 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
     <head th:fragment="head">
-        <title>Matrícula</title>
+        <title>JurásicoKids</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
         <link href="CSS/header.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body class="body2">
+    <body>
         <article  th:fragment="cuerpomatricula" class="img">
-           
+            <div class="cuadro" style="width: 70%;margin-left: 16%">
+            <br>
             <h1 style="text-align: center; color: black;margin-top: 2%">Matrícula</h1>
             <br>
-            <form th:action="@{/Matricula}" method="POST" th:object="${matricula}">
-                    <div style="margin: 0 5% 0 5%" >
-                       <label class="form-control" for="identificacionEstudiante">Identificacion de estudiante:</label>
-                                <input id="identificacionEstudiante" type="number" class="form-control" th:field="*{identificacionEstudiante}", 
-                                       required autofocus="autofocus">
-                    </div>
-                    <br>
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="nombreCompletoEstudiante">Nombre Completo del Estudiante:</label>
-                            <input id="nombreCompletoEstudiante" type="text" class="form-control" th:field="*{nombreCompletoEstudiante}", 
+                
+            <form th:action="@{/Matricula}" method="POST" th:object="${estudiante}"                          
+                  enctype="multipart/form-data">
+                 <input type="hidden" name="idEstudiante" th:field="*{idEstudiante}"/>
+                 <input type="hidden" name="imagen" th:field="*{imagen}"/>
+                 <div style="display: flex">
+                     <div style="margin: 0 0 0 17%;width: 30%" >
+                         <label  for="nombre" style="margin: 0 0 1% 1%">Nombre del Estudiante:</label>
+                         <input id="nombre" style="border-color: #CCD264" type="text" class="form-control" th:field="*{nombre}", 
+                                required autofocus="autofocus">
+                     </div>
+                     <div style="margin: 0 2% 0 6%;width: 30%">
+                         <label style="margin: 0 0 1% 1%"  for="apellido">Apellido del Estudiante:</label>
+                         <input id="apellido" style="border-color: #CCD264" type="text" class="form-control" th:field="*{apellido}", 
+                                required autofocus="autofocus">
+                     </div>   
+                </div>
+                <br>
+                <div style="display: flex">
+                        <div style="margin: 0 0 0 17%;width: 30%">
+                            <label style="margin: 0 0 1% 1%"  for="sede">Sede:</label>
+                            <input id="sede" style="border-color: #CCD264" type="text" class="form-control" th:field="*{sede}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <div style="margin: 0 2% 0 6%;width: 30%">
+                            <label style="margin: 0 0 1% 1%"  for="nivel">Nivel al matricula:</label>
+                            <input id="nivel" type="text" style="border-color: #CCD264" class="form-control" th:field="*{nivel}", 
+                                   required autofocus="autofocus">
+                        </div>
+                </div>
+                <br>
+                <div style="display: flex">
+                        <br>
+                        <div style="margin: 0 0 0 17%;width: 30%">
+                            <label style="margin: 0 0 1% 1%" for="madre">Nombre de la Madre:</label>
+                            <input id="direccionCallePrincipal" style="border-color: #CCD264" type="text" class="form-control" th:field="*{madre}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <div style="margin: 0 2% 0 6%;width: 30%">
+                            <label style="margin: 0 0 1% 1%" for="padre">Nombre del Padre:</label>
+                            <input id="telefonoConvencional" style="border-color: #CCD264" type="text" class="form-control" th:field="*{padre}", 
+                                   required autofocus="autofocus">
+                        </div>
+                </div>
+                <br>
+                <div style="display: flex">
+                        <div style="margin: 0 0 0 17%;width: 30%">
+                            <label style="margin: 0 0 1% 1%" for="contacto">Numero de Contacto de Emergencia:</label>
+                            <input id="contacto" style="border-color: #CCD264" type="text" class="form-control" th:field="*{contacto}", 
+                                   required autofocus="autofocus">
+                        </div>
+                        <div style="margin: 0 2% 0 6%;width: 30%">
+                            <label style="margin: 0 0 1% 1%"  for="edad">Edad del niño:</label>
+                            <input id="edad" style="border-color: #CCD264" type="text" class="form-control" th:field="*{edad}", 
+                                   required autofocus="autofocus">
+                        </div>
+                </div>
+                <br>
+                <div style="display: flex">
+                        <div style="margin: 0 0 0 17%;width: 30%">
+                            <label style="margin: 0 0 1% 1%"  for="alergias">Alergias:</label>
+                            <input id="alergias" style="border-color: #CCD264" type="text" class="form-control" th:field="*{alergias}", 
                                    required autofocus="autofocus">
                         </div>
                         <br>
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="dia">Dia:</label>
-                            <input id="dia" type="number"class="form-control" th:field="*{dia}", 
+                        <div style="margin: 0 2% 0 6%;width: 30%">
+                            <label style="margin: 0 0 1% 1%" for="condicion">Condicion Especial:</label>
+                            <input id="sede" style="border-color: #CCD264" type="text" class="form-control" th:field="*{condicion}", 
                                    required autofocus="autofocus">
                         </div>
+                 </div>
+                 <br>
+                <div style="margin: 0 0 0 17%;width: 30%">
+                    <label for="imagen">Foto de Perfil</label>
+                    <input class="form-control" style="border-color: #CCD264" type="file" name="imagenFile"
+                           onchange="readURL(this);" /> 
+                    <img class="perfil" id="blah" th:src="@{${estudiante.imagen}}" alt="Foto"/>
+                </div>
                         <br>
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="mes">Mes:</label>
-                            <input id="mes" type="number" class="form-control" th:field="*{mes}", 
-                                   required autofocus="autofocus">
+                        <div style="margin: 0 0 0 17%">
+                            <button type="submit" class="btn" 
+                            style="background: #CCD264; width: 120px;">Matricular</button>
                         </div>
-                        <br>   
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="aho">Año:</label>
-                            <input id="aho" type="number" class="form-control" th:field="*{aho}", 
-                                   required autofocus="autofocus">
-                        </div>
-                        <br>
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="lugarNacimiento">Lugar de Nacimiento:</label>
-                            <input id="lugarNacimiento" type="text" class="form-control" th:field="*{lugarNacimiento}", 
-                                   required autofocus="autofocus">
-                        </div>
-                        <br>
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="ahosCumplidos">Años Cumplidos:</label>
-                            <input id="ahosCumplidos" type="number" class="form-control" th:field="*{ahosCumplidos}", 
-                                   required autofocus="autofocus">
-                        </div>
-                        <br>
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="direccionCallePrincipal">Direccion Callde Principal:</label>
-                            <input id="direccionCallePrincipal" type="text" class="form-control" th:field="*{direccionCallePrincipal}", 
-                                   required autofocus="autofocus">
-                        </div>
-                        <br>
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="telefonoConvencional">Teléfono Convencional:</label>
-                            <input id="telefonoConvencional" type="text" class="form-control" th:field="*{telefonoConvencional}", 
-                                   required autofocus="autofocus">
-                        </div>
-                        <br>
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="direccionCalleTransversal">Direccion de Calle Transversal:</label>
-                            <input id="direccionCalleTransversal" type="text" class="form-control" th:field="*{direccionCalleTransversal}", 
-                                   required autofocus="autofocus">
-                        </div>
-                        <br>
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="numeroCasa">Numero de Casa:</label>
-                            <input id="numeroCasa" type="text" class="form-control" th:field="*{numeroCasa}", 
-                                   required autofocus="autofocus">
-                        </div>
-                        <br>
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="sede">Sede:</label>
-                            <input id="sede" type="text" class="form-control" th:field="*{sede}", 
-                                   required autofocus="autofocus">
-                        </div>
-                        <br>
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="identificacionEncargado">Identificacion del Encargado:</label>
-                            <input id="identificacionEncargado" type="text" class="form-control" th:field="*{identificacionEncargado}", 
-                                   required autofocus="autofocus">
-                        </div>
-                        <br>
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="nombreCompletoEncargado">Nombre Completo del Encargado:</label>
-                            <input id="nombreCompletoEncargado" type="text" class="form-control" th:field="*{nombreCompletoEncargado}", 
-                                   required autofocus="autofocus">
-                        </div>
-                        <br>
-                        <div style="margin: 0 5% 0 5%">
-                            <label class="form-control" for="telefono">Telefono:</label>
-                            <input id="telefono" type="number" class="form-control" th:field="*{telefono}", 
-                                   required autofocus="autofocus">
-                        </div>
- 
-                        <br><br><br>
-                        <div style="margin: 0 0 0 48%">
-                            <button type="submit" class="btn btn-success">Matricular</button>
-                        </div>
-                        <br>            
+                        <br><br>
+                <div style="position: absolute; margin: -2% 0 0 12%;background-color:purple;
+                    border-radius: 10px;padding: 10px;font-size: 15px;color: white"
+                    th:if="${param.exito}">Estudiante Matriculado exitosamente! 
+                </div>
+                <br><br><br>
             </form>
+                
+            </div>    
         </article>
     </body>
 </html>
