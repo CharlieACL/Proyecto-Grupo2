@@ -14,7 +14,14 @@
    padding: 0;
    font-family: sans-serif;
 }
+.bodyProfesor{
+    min-height: 100vh;
+    background: linear-gradient(rgba(2555, 255, 255, 0.35), rgba(2555, 255, 255, 0.35)),
+    url(https://s2.ppllstatics.com/elcorreo/www/multimedia/202201/19/media/cortadas/los-nuevos-retos-para-los-profesores-kl7F-U1605946132329zF-1248x770@El%20Correo.jpg) no-repeat center
+    center fixed;
+    background-size: cover;
 
+}
 .bodyContac{
    background: url(https://i.pinimg.com/originals/1c/2f/39/1c2f39e81f9854d89180d74134ba7775.jpg) no-repeat center top;
    background-size: cover;
@@ -196,13 +203,64 @@
     height: 44%;
     background-color: white;
 }
+.cuadroP{
+    position: static;
+    margin: 0 0 0 30%;
+    margin-top: 2%;
+    width: 40%;
+    height: 44%;
+    background-color: #F0F4BB;
+}
+.cuadroP1{
+    position: static;
+    margin: 0 0 0 30%;
+    width: 40%;
+    height: 44%;
+    background-color: #F0F4BB;
+}
+.cuadroN1{
+    position: static;
+    margin: 0 0 0 30%;
+    width: 40%;
+    height: 44%;
+    background-color: #FFFFFF95;
+}
+.cuadroN2{
+    
+    position: static;
+    margin: 0 0 0 0;
+    width: 100%;
+    height: 20%;
+    background-color: #F0F4BB;
+}
+
 
 .input{
     border: 2px solid #BBB372; 
     border-radius: 10px; 
     padding: 8px;
 }
-
+.inputP{
+    border: 2px solid #BBB372; 
+    border-radius: 10px; 
+    padding: 8px;
+}
+.inputP1{
+    border: 2px solid #BBB372; 
+    border-radius: 10px; 
+    padding: 8px;
+}
+.inputN1{
+    border: 2px solid #BBB372; 
+    border-radius: 10px; 
+    padding: 8px;
+}
+.redondear{
+   border-radius: 100%;
+   width: 90px;
+   height: 90px;
+   margin: 0 0 0 0; 
+}
 .userL{
     position: absolute;
     border-radius: 50%;

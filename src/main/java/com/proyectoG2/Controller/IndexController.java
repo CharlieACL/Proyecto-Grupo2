@@ -43,4 +43,9 @@ public class IndexController {
         return "EnfoqueH";
     }
     
+    @RequestMapping("Profesores")
+    public String Profesores(){
+        return "Profesores";
+    }
+    
 }
