@@ -41,8 +41,7 @@ public class CarritoController {
         if (item2 == null) {
             Tienda tienda = tiendaService.getTienda(item);
             item2 = new Item(tienda);
-//            Producto producto = productoService.getProducto(item);
-//            item2 = new Item(producto);
+
         }
         itemService.save(item2);
         var lista = itemService.gets();
@@ -55,7 +54,7 @@ public class CarritoController {
         model.addAttribute("listaItems", lista);
         model.addAttribute("listaTotal", totalCarritos);
         model.addAttribute("carritoTotal", carritoTotalVenta);
-        return new ModelAndView("layout/plantillaCarrito :: verCarrito");
+        return new ModelAndView("redirect:/Tienda?agregado");
     }
 
 

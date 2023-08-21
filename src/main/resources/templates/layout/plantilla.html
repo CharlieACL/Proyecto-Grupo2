@@ -36,12 +36,14 @@
                                                 <li><a class="dropdown-item" href="/Actividades">Actividades</a></li>
                                                 <li><a class="dropdown-item" href="/PlanE">Plan Estudiantil</a></li>
                                                 <li><a class="dropdown-item" href="/Profesores">Profesores</a></li>
-                                                <li><a class="dropdown-item" href="/libreta/listado">Libreta Estudiantil</a></li>
                                                 <li><a class="dropdown-item" href="/EnfoqueH">Enfoque Holistico</a></li>
+                                                <li><a class="dropdown-item" href="/libreta/listado" 
+                                                sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_PROFESOR','ROLE_USER')">Libreta Estudiantil</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link me-4 fs-3"  href="/Matricula">Matricula</a>
+                                            <a class="nav-link me-4 fs-3"  href="/Matricula"
+                                            sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_PROFESOR','ROLE_USER')">Matricula</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link me-4 fs-3"  href="/Sedes">Sedes</a>      

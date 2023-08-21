@@ -38,17 +38,20 @@
 .nav-item .nav-link:hover{
     background-color: #F2FD3A;
     font-size: 22px;
-    color: purple;
-    transition: 0.2s;
+    color: blueviolet;
+    transition: 0.1s;
+    border: 2px; 
+    border-radius: 10px; 
+    padding: 8px;
 }
 
 .dropdown-menu .dropdown-item{
     font-size: 20px;
-    color: purple;   
+    color: blueviolet;   
 }
 
 .dropdown-menu .dropdown-item:hover{
-    background-color: purple;
+    background-color: blueviolet;
     color: white
 }
 
@@ -237,6 +240,11 @@
 
 .input{
     border: 2px solid #BBB372; 
+    border-radius: 10px; 
+    padding: 8px;
+}
+.inputC{
+    border: 2px solid blue; 
     border-radius: 10px; 
     padding: 8px;
 }

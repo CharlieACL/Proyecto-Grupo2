@@ -3,74 +3,57 @@
       xmlns:th="http://www.thymeleaf.org">
     <head th:fragment="head"; style="position: fixed">
         <title>JurásicoKids</title>
-        <!--        <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
-                <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
-                <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-                <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-                <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-                <link href="CSS/textos.css" rel="stylesheet" type="text/css"/>
-                <link href="../../static/CSS/header.css" rel="stylesheet" type="text/css"/>-->
     </head>
     <body>
-        <article  th:fragment="cuerpotienda">
-            <div style="text-align: center;position: relative;top: 50px">
-                <h1 style="color: #BBB372">Tienda</h1>
-                <p style="font-size: 25px; color:#BBB372">___________________________________________________________________________________</p><br>
+        <article  th:fragment="cuerpotienda" class="cuadro" style="width: 70%; margin-left: 15%">
+            <br>
+            <div style="text-align: center">
+                <h1 >Tienda</h1>
+                <br>
             </div>
             <br>
-                <div class="container" style="margin: 0 0 0 12%">
+                <div class="container" style="margin: 0 0 0 8%;width: 100%">
                     <div class="row">
                         <div class="col-md-10">
                             <div class="card">
                                 <div class="card-header">
                                     <div th:if="${tiendas != null and !tiendas.empty}" >
                                         <table class="table table-striped table-hover fs-6">
-                                            <thead class="table-dark">
-                                                <tr><th class="text-center">#</th>
+                                            <thead style="background: blueviolet">
+                                                <tr style="color: white;text-align: center">
+                                                    <th class="text-center">#</th>
                                                     <th class="text-center">Nombre</th>
                                                     <th class="text-center">Precio</th>
                                                     <th class="text-center">Imagen</th>
-                                                    <th></th></tr>
+                                                    <th></th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                                <tr th:each="tienda, contador : ${tiendas}">
+                                                <tr th:each="tienda, contador : ${tiendas}"
+                                                    style="text-align: center; font-weight: bold">
                                                     <td class="text-center">[[${contador.count}]]</td>
                                                     <td class="fs-6, text-center">[[${tienda.nombre}]]</td>
                                                     <td class="text-center">[[${tienda.precio}]]</td>
                                                     <td class="text-center"> <img id="blah" th:src="@{${tienda.rutaImagen}}" alt="your image" height="100"/> </td>
                                                     <td>
-                                                        <!--                                                    <a th:href="@{/Tienda/producto/}+${tienda.idTienda}"-->
-<!--                                                        <form action="/carrito/agregar/+${tienda.idTienda}">
-                                                            <button
-                                                                type="submit"
-                                                                class="btn" style="background-color: #CCD264; color: white">
-                                                                <i class="fas fa-cart-plus"></i>
-                                                                Comprar
-                                                            </button>
-                                                        </form>-->
                                                         <a th:href="@{/carrito/agregar/}+${tienda.idTienda}"
-                                                           class="btn btn-success">
-                                                            <i class="fa-solid fa-cart-plus"></i> Comprar</a></td>
-                                                    </td>
+                                                           class="btn " style="background: #CCD264;color: white;font-weight: bold">
+                                                            <i class="fa-solid fa-plus"></i> Añadir al Carrito</a>
+                                                    </td>                                                    
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="text-center p-2" th:if="${tiendas == null or tiendas.empty}">
-                                        <span>[[#{lista.vacia}]]</span>
+                                        <span>Carrito Vacio</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--                <div style="position: absolute; top: 0; left: 0 ; padding-top: 160px">
-                                    <img src="img/DinoIZQ.png" alt=""/>
-                                </div>    
-                                <div style="position: absolute; top: 0; right: 0; padding-top: 155px">
-                                    <img src="img/DinoDER.png" alt=""/>
-                                </div>-->
-        </article>
+                </article>
+                
+        
+     
     </body>
 </html>

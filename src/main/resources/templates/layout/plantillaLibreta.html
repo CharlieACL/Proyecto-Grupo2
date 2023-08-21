@@ -174,12 +174,12 @@
                                      <h6> Condicion: [[${estudiante.condicion}]]</h6>
                                 </div>     
                             </div>
-                            <div class="cuadro input" style="margin: -10% 0 0 33%;width: 690px;height: 190px;position: absolute" sec:authorize="hasRole('ROLE_USER')">
+                            <div class="cuadro input" style="margin: -10% 0 0 33%;width: 690px;height: 190px;position: absolute" sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
                                 <div>
                                      <h6>[[${estudiante.observaciones}]]</h6>              
                                 </div>     
                             </div>
-                            <div style="margin: -1% 0 0 33%;position: absolute" sec:authorize="hasAnyRole('ROLE_USER')">
+                            <div style="margin: -1% 0 0 33%;position: absolute" sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
                                 <h6 th:text="${estudiante.asistencia} ? 'Presente' : 'Ausente'"/>
                             </div>
                         </tr>
@@ -200,9 +200,9 @@
                                                     <label for="observaciones" style="margin: 0 0 2% 8%"><h6>Observaciones</h6></label>
                                                     <textArea type="text" class="cuadro input" style="width: 690px;height: 190px"  
                                                               name="observaciones" 
-                                                           th:field="*{observaciones}" sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_PROFESOR')"/>
+                                                           th:field="*{observaciones}" sec:authorize="hasRole('ROLE_PROFESOR')"/>
                                                 </div>
-                                                <div style="position: absolute;margin: -1% 0 0 34%" sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_PROFESOR')" >
+                                                <div style="position: absolute;margin: -1% 0 0 34%" sec:authorize="hasRole('ROLE_PROFESOR')" >
                                                     <label for="asistencia"><h6>Presente</h6></label>
                                                     <input class="form-check-input" style="border-color: #CCD264;margin-top: 7%" 
                                                            type="checkbox" 
@@ -210,7 +210,19 @@
                                                            id="asistencia"
                                                            th:field="*{asistencia}">
                                                 </div>
-                                                <div style="position: absolute;margin: -1% 0 0 79%" sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_PROFESOR')">
+                                                <div>
+                                                    <input type="hidden" name="nombre" value="[[${estudiante.nombre}]]"th:field="*{nombre}">
+                                                    <input type="hidden" name="apellido" value="[[${estudiante.apellido}]]"th:field="*{apellido}">
+                                                    <input type="hidden" name="sede" value="[[${estudiante.sede}]]"th:field="*{sede}">
+                                                    <input type="hidden" name="nivel" value="[[${estudiante.nivel}]]"th:field="*{nivel}">
+                                                    <input type="hidden" name="edad" value="[[${estudiante.edad}]]"th:field="*{edad}">
+                                                    <input type="hidden" name="madre" value="[[${estudiante.madre}]]"th:field="*{madre}">
+                                                    <input type="hidden" name="padre" value="[[${estudiante.padre}]]"th:field="*{padre}">
+                                                    <input type="hidden" name="contacto" value="[[${estudiante.contacto}]]"th:field="*{contacto}">
+                                                    <input type="hidden" name="alergias" value="[[${estudiante.alergias}]]"th:field="*{alergias}">
+                                                    <input type="hidden" name="condicion" value="[[${estudiante.condicion}]]"th:field="*{condicion}">
+                                                </div>
+                                                <div style="position: absolute;margin: -1% 0 0 79%" sec:authorize="hasRole('ROLE_PROFESOR')">
                                                     <button type="submit" class="btn " style="background: #CCD264;width: 100px;height: 40px">
                                                         <h6 > Guardar</h6> 
                                                     </button>
@@ -225,29 +237,6 @@
                 </div>
             </div>
         </section>
-        
-<!--        <section th:fragment="botonesEditar">
-            <div class="container py-4 mb-4 bg-light">
-                <div class="row">
-                    <div class="col-md-4 d-grid">
-                        <a th:href="@{/libreta/listado}" class="btn btn-primary">
-                            <i class="fas fa-arrow-left"></i> Regresar
-                        </a>
-                    </div>
-                    <div class="col-md-4 d-grid">                                
-                        <a th:href="@{/libreta/eliminar/}+${estudiante.idEstudiante}"
-                           class="btn btn-danger">
-                            <i class="fas fa-trash"></i> Eliminar
-                        </a>
-                    </div>
-                    <div class="col-md-4 d-grid">
-                        <button type="submit" class="btn" >
-                            <i class="fas fa-check"></i> Guardar
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>-->
     </body>
 </html>
         

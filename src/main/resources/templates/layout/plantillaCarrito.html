@@ -6,63 +6,17 @@
         <title>Inicio</title>
     </head>
     <body>
-<!--        <section th:fragment="listadoTiendas" id="tiendas">
-            <div class="container">
-                <div class="row row-cols-2" >
-                    <h2 class="inline">Carrito de Compras</h2>
-                    <div id="resultsBlock"></div>
-                </div>
-                <div class="row row-cols-3" 
-                     th:if="${tiendas != null and !tiendas.empty}">
-                    <div class="card" th:each="tienda : ${tiendas}">
-                        <div class="card-body">
-                            <h5 class="card-title">Descripción</h5>
-                            <figure>
-                                <img th:src="@{${tienda.rutaImagen}}" height="200"/>
-                                <figcaption>[[${tienda.precio}+' ('+${tienda.existencias}+')']]
-                                </figcaption>
-                            </figure>
-                            <form>
-                                <input type="hidden" name="texto" th:value="${tienda.idTienda}"/>
-                                <input type="hidden" name="texto" th:value="${tienda.existencias}"/>
-                                <button class="btn btn-ligth" id="addCar" 
-                                        name="addCar" onclick="addCard(this.form)" 
-                                        type="button"><i class="fas fa-cart-plus"></i>
-                                </button>
-                            </form>
-                            <p class="card-text">Detalle</p>                            
-                        </div>
-                    </div>
-                </div>
-                <div th:if="${tiendas == null or tiendas.empty}">El carrito se encuentra vacío</div>
-            </div>
-        </section>-->
-
-        <div th:fragment="verCarrito" > 
-            
-            <form action="/Carrito">
-                <button
-                    type="submit"
-                    class="btn btn-primary">
-                    <i class="fas fa-cart-plus"></i>
-                    Confirmar
-                </button>
-            </form>
-        </div>     
-
-
         <section th:fragment="listadoCarrito" id="items">
-            <div class="container">
+            <div class="container" style="margin-top: 2%;width: 70%">
+                <h1 style="text-align: center" >Carrito de Compras</h1>
+                <br>
                 <div class="row">
                     <div class="col-md-9">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>Carrito</h4>
-                            </div>
                             <div th:if="${items != null and !items.empty}">
                                 <table class="table table-stryped">
-                                    <thead class="thead-dark">
-                                        <tr>
+                                    <thead style="background: blueviolet">
+                                        <tr style="color: white;text-align: center">
                                             <th>#</th>
                                             <th>Descripcion</th>
                                             <th>Precio</th>
@@ -73,7 +27,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr th:each="item, contador : ${items}">
+                                        <tr th:each="item, contador : ${items}"
+                                            style="text-align: center; font-weight: bold">
                                             <td>[[${contador.count}]]</td>
                                             <td>[[${item.nombre}]]</td>
                                             <td class="text-end">[[${item.precio}]]</td>
@@ -108,63 +63,56 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card text-center bg-primary text-white mb-3">
+                        <div class="cuadro input" style="width: 100%;text-align: center">
                             <div class="card-body">
-                                <h3>Total de la compra</h3>
-                                <h4 class="fs-4">
+                                <h3  style="color: #CCD264;font-weight: bold">Total del Carrito</h3>
+                                <h4 class="fs-4" style="color: #CCD264;font-weight: bold">
                                     [[${carritoTotal}]] usd
                                 </h4>
                             </div>
                         </div>
-                        <div class="card text-center bg-success text-white mb-3">
+                        <br>
+                        <div class="card text-center  text-white mb-3"; style="background: #CCD264;width:100%;margin-left: 7%">
                             <div class="card-body">
-                                <a th:href="@{/}"
-                                   class="btn btn-success">
+                                <a th:href="@{/Carrito?save}"
+                                   class="btn"style="background: #CCD264;font-weight: bold">
                                     <i class='fas fa-check'></i> Confirmar Compra
                                 </a>
                             </div>
                         </div>                        
                     </div>
                 </div>
+                    <div class="container" style="margin-left: 82%">
+                        <div class="row row-cols-6" >
+                            <a th:href="@{/Tienda}" class="btn btn-primary" style="width:20%">
+                                <i class='fas fa-reply'></i> Regresar a Tienda</a>
+                        </div>
+                    </div>
+                    <div class="cuadro inputC" style="background: #ccccff;
+                         color: blue;text-align: center;
+                         margin: -8% 0 0 8%;opacity: .8; width: 50%; height: 30%" 
+                        th:if="${param.save}">
+                        <h5 style="margin-top: 10%">Gracias por comprar con nosotros!</h5>
+                        <br><br>
+                        <h6>Pronto nos estaremos comunicando con usted para realizar su pedido</h6>
+                    </div>
             </div>
-            <div class="container">
-                <div class="row row-cols-6" >
-                    <a th:href="@{/Tienda}" class="btn btn-primary">
-                        <i class='fas fa-reply'></i> Regresar a Tienda</a>
+            
+        </section>
+        
+        <section th:fragment="verCarrito" >
+            <div th:if="${param.agregado}">
+                <form action="/Carrito" >
+                        <button
+                            type="submit"
+                            class="btn btn-primary" style="position: absolute;
+                            margin: -63% 0 0 44%;
+                            width: 13%;font-weight: bold">
+                            <i class="fas fa-cart-plus"></i>
+                            Ver Carrito [[${listaTotal}]]
+                        </button>
+                    </form>
                 </div>
-                <!--                <div class="row row-cols-2">
-                                    <div class="card">
-                                        <div class="card-header">[[#{carrito.datos}]]</div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">[[${item.nombre}]]</h5>
-                                            <h6 class="card-subtitle mb-2 text-muted text-end">
-                                                [[${item.precio}]]</h6>
-                                        </div>
-                                    </div>
-                                    <div class="card">                    
-                                        <div class="card-body">
-                                            <figure><img th:src="@{${item.rutaImagen}}" width="120"/></figure>
-                                            <form th:action="@{/carrito/guardar}"
-                                                  method="post"
-                                                  th:object="${item}">
-                                                <input type="hidden" name="idTienda" th:field="*{idTienda}"/>
-                                                <div class="form-group">
-                                                    <label for="cantidad">[[#{carrito.cantidad}]]:</label>
-                                                    <input type="number" name="cantidad" th:field="*{cantidad}" 
-                                                           min='1' th:max="${item.existencias}"/></div>                
-                                                <div class="form-group">                    
-                                                    <button class="btn btn-success" type="submit" name="guardar">
-                                                        <i class='fas fa-save'></i> [[#{accion.guardar}]]</button>
-                                                </div>
-                                            </form>
-                                            <a th:href="@{/carrito/eliminar/}+${item.idTienda}"
-                                               class="btn btn-danger">
-                                                <i class='fas fa-trash'></i> Eliminar producto
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>-->
-            </div>
         </section>
     </body>
 </html>

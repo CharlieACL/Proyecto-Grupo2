@@ -37,22 +37,18 @@ public class ProjectConfig implements WebMvcConfigurer{
                 .authorizeHttpRequests((request) -> request
                 .requestMatchers("/", "/index", "/errores/**",
                         "/Servicios/**", "/Sedes/**", "/PlanE/**","/EnfoqueH/**","/Tienda/**",
-                        "/Matricula/**","/Matricula/guardar/**",  "/Actividades/**","/Contactenos/**","/carrito/**",
+                        "/Matricula/guardar/**",  "/Actividades/**","/Contactenos/**","/carrito/**",
                      "/Carrito/**","/Profesores/**",
                         "/registro/**", "/js/**", "/webjars/**","/CSS/**","/img/**")
                 .permitAll()
                 .requestMatchers(
-                        "/libreta/**","/carrito/nuevo", "/carrito/guardar","/carrito/agregar",
+                        "/Matricula/**","/libreta/**","/carrito/nuevo", "/carrito/guardar","/carrito/agregar",
                         "/carrito/modificar/**", "/carrito/eliminar/**",
                         "/libreta/nuevo", "/libreta/guardar/**",
                         "/libreta/estudiante/**", "/libreta/eliminar/**",
                         "/usuario/nuevo", "/usuario/guardar",
-                        "/usuario/modificar/**", "/usuario/eliminar/**",
-                        "/reportes/**"
-                ).hasAnyRole("USER","ADMIN","PROFESOR")
-                .requestMatchers("/libreta/**","/libreta/listado/**","/libreta/nuevo", "/libreta/guardar/**",
-                        "/libreta/estudiante/**", "/libreta/eliminar/**")
-                .hasRole("USER")
+                        "/usuario/modificar/**", "/usuario/eliminar/**"
+                ).hasAnyRole("ADMIN","PROFESOR","USER")
                 )
                 .formLogin((form) -> form
                 .loginPage("/login").permitAll())
