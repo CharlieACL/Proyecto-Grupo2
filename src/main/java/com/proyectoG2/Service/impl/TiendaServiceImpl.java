@@ -25,4 +25,16 @@ public class TiendaServiceImpl implements TiendaService{
     public Tienda getTienda(Tienda tienda) {
         return tiendaDao.findById(tienda.getIdTienda()).orElse(null);
     }
+
+    @Override
+    @Transactional
+    public void save(Tienda tienda) {
+        tiendaDao.save(tienda);
+    }
+
+    @Override
+    @Transactional
+    public void delete(Tienda tienda) {
+        tiendaDao.delete(tienda);
+    }
 }
